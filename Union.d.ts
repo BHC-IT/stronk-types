@@ -48,5 +48,3 @@ export namespace Union {
   /** Generate a union type from the values in a const Tuple */
   export type FromTuple<Tuple extends ReadonlyArray> = Tuple[number]
 }
-
-export default Union
