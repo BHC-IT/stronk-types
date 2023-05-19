@@ -6,7 +6,7 @@
   "license": "MIT",
   "types": "./index.d.ts",
   "files": [
-    "./*/*.d.ts"
+    "./**/*.d.ts"
   ],
   "dependencies": {
     "@type-challenges/utils": "^0.1.1"
