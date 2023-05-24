@@ -32,18 +32,5 @@ export namespace Opaque {
   export type Strict<T, Tag extends string> = T & Tagged<Tag>
 }
 
-declare module '@type-challenges/utils' {
-  // prettier-ignore
-  export namespace MergeInsertions {
-    /**
-    * Same as {@link MergeInsertions}, but recursive
-    */
-    export type Deep<T>
-      = T extends Function ? T
-      : T extends object ? { [K in keyof T]: Deep<T[K]> }
-      : T
-  }
-}
-
 export type PartialExcept<T, K extends keyof T>
   = MergeInsertions<Partial<T> & Pick<T, K>>
