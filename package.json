@@ -2,7 +2,7 @@
   "author": "Ludovic Fernandez",
   "name": "@bhc/stronk-types",
   "description": "A collection of utilities types for very stronkly typed TS projects",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "types": "./index.d.ts",
   "files": [
