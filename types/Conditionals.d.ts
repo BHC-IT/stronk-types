@@ -1,16 +1,8 @@
-type CheckIfExtends<Type, ToExtend> = Type extends ToExtend ? true : false
-
-// prettier-ignore
-export type Extends<Type, ToExtend>
-  = CheckIfExtends<Type, ToExtend> extends true
-    ? true
-    : CheckIfExtends<Type, ToExtend> extends false
-      ? false
-      : CheckIfExtends<Type, ToExtend> extends boolean
-        ? false
-        : never
+import { ExpectExtends } from '@type-challenges/utils'
 
 export type If<Test extends boolean, OnTrue, OnFalse = never> = Test extends true ? OnTrue : OnFalse
+
+export type Extends<Type, ToExtend> = ExpectExtends<Type, ToExtend>
 
 export type Not<Test extends boolean> = If<Test, false, true>
 export type And<A extends boolean, B extends boolean> = If<A, If<B, true, false>, false>
