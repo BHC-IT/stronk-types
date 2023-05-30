@@ -6,4 +6,6 @@ export namespace Object {
 
   /** Extract an object's keys as union */
   export type Keys<T extends object> = IfNotNever<T, IfNotAny<T, keyof T>>
+
+  export type Entry<T extends object, Key extends keyof T> = [Key, T[Key]]
 }
