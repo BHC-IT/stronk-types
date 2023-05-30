@@ -1,8 +1,7 @@
-export * from '@type-challenges/utils'
-
-export * from './Util'
-export * from './Conditionals'
-export * from './Union'
 export * from './ArrayUtils'
-export * from './StringUtils'
+export * from './Conditionals'
 export * from './Freeze'
+export * from './StringUtils'
+export * from './Test'
+export * from './Union'
+export * from './Util'
