@@ -1,7 +1,7 @@
 import { MergeInsertions } from "@type-challenges/utils"
 
 export type Primitive = string | number
-export type Accessor = Primitive | symbol
+export type Accessor = keyof any
 
 export type Nothing = Record<Accessor, never>
 
