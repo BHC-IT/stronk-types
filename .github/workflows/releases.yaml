@@ -24,8 +24,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
 
+      - name: Install pnpm
+        run: pnpm -g i pnpm
+
       - name: Install dependencies
-        run: npm -g i pnpm && pnpm i --frozen-lockfile
+        run: pnpm i --frozen-lockfile
 
       - name: Release
         env:
@@ -35,4 +38,4 @@ jobs:
           GIT_AUTHOR_EMAIL: contact@bhc-it.com
           GIT_COMMITTER_NAME: bhc-bot
           GIT_COMMITTER_EMAIL: contact@bhc-it.com
-        run: npx semantic-release
+        run: pnpx semantic-release
