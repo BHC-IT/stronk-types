@@ -1,8 +1,10 @@
-import { ExpectExtends } from '@type-challenges/utils'
+import { ExpectExtends as Extends, IsAny, NotAny as IsNotAny } from '@type-challenges/utils'
+
+export { IsAny, IsNotAny, Extends }
 
 export type If<Test extends boolean, OnTrue, OnFalse = never> = Test extends true ? OnTrue : OnFalse
 
-export type Extends<Type, ToExtend> = ExpectExtends<Type, ToExtend>
+export type NotExtends<Type, ToExtend> = Not<Extends<Type, ToExtend>>
 
 export type Not<Test extends boolean> = If<Test, false, true>
 export type And<A extends boolean, B extends boolean> = If<A, If<B, true, false>, false>
