@@ -34,3 +34,5 @@ export type IfNotNever<Type, OnIsNotNever, OnIsNever = never> = If<
 
 export type IfAny<Type, OnIsAny, OnIsNotAny = never> = If<IsAny<Type>, OnIsAny, OnIsNotAny>
 export type IfNotAny<Type, OnIsNotAny, OnIsAny = never> = If<IsNotAny<Type>, OnIsNotAny, OnIsAny>
+
+export type IsObject<Type> = Extends<Type, object>
