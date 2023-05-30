@@ -4,10 +4,11 @@ import { Opaque } from './Util'
 import { If } from './Conditionals'
 import { StringUtils, EmptyString } from './StringUtils'
 import { ReadonlyArray } from './ArrayUtils'
+import { Object } from './Object'
 
 // prettier-ignore
-type __Strict<T, TAll>
-  = T extends T ? MergeInsertions<T & Partial<Record<Exclude<Union.Keys<TAll>, keyof T>, never>>>
+type __Strict<T extends object, TAll extends T>
+  = T extends T ? MergeInsertions<T & Partial<Record<Exclude<Object.Keys<TAll>, keyof T>, never>>>
   : never
 
 // prettier-ignore
@@ -29,18 +30,8 @@ export namespace Union {
     export type Uppercase = FromString<'ABCDEFGHIJKLMNOPQRSTUVWXYZ'>
   }
 
-  /**
-   * Get ALL the keys from given union
-   */
-  export type Keys<T>
-    = T extends T ? keyof T
-    : never
-
-  /**
-   * Build a union such that if one of the Union members has been inferred, then its content can NOT
-   * contains non-common keys from the other members
-   */
-  export type Strict<T> = __Strict<T, T>
+  /** Make a discriminated union */
+  export type Strict<T extends object> = __Strict<T, T>
 
   /** A Union type that also accepts arbitrary strings */
   export type LiteralFlexible<S extends string> = S | Opaque<string>
