@@ -1,6 +1,6 @@
 {
     "parser": "babel-ts",
-    "printWidth": 150,
+    "printWidth": 100,
     "singleQuote": true,
     "tabWidth": 2,
     "useTabs": false,
