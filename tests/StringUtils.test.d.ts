@@ -1,9 +1,9 @@
 import { Equal, ExpectFalse, ExpectTrue, Expect } from '@type-challenges/utils'
 
-import '..'
+import '../types'
 
 // prettier-ignore
-declare module '..' {
+declare module '../types' {
   namespace StringUtils {
     type __TEST__ = {
       IsValidVariableNameTail: [
@@ -15,6 +15,7 @@ declare module '..' {
         ExpectTrue<IsValidVariableNameTail<'PascalCase'>>,
         ExpectTrue<IsValidVariableNameTail<'camelCase'>>,
         ExpectTrue<IsValidVariableNameTail<'enumerated23'>>,
+        // FIXME
         ExpectFalse<IsValidVariableNameTail<'1start_with_num'>>,
         ExpectFalse<IsValidVariableNameTail<'Forbidden-Characters!'>>,
       ]
