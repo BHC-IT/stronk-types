@@ -1,0 +1,35 @@
+name: Automatic release tagging and publishing
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Tag release
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+            token: ${{ secrets.GH_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GIT_AUTHOR_NAME: bhc-bot
+          GIT_AUTHOR_EMAIL: contact@bhc-it.com
+          GIT_COMMITTER_NAME: bhc-bot
+          GIT_COMMITTER_EMAIL: contact@bhc-it.com
+        run: npx semantic-release
