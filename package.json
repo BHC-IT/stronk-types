@@ -1,25 +1,11 @@
 {
-  "author": "Ludovic Fernandez",
   "name": "@bhc/stronk-types",
+  "author": "Ludovic Fernandez",
   "description": "A collection of utilities types for very stronkly typed TS projects",
   "version": "1.1.0",
   "license": "MIT",
-  "types": "./index.d.ts",
-  "files": [
-    "./types"
-  ],
-  "dependencies": {
-    "@type-challenges/utils": "^0.1.1"
-  },
-  "devDependencies": {
-    "typescript": "^5.0.4"
-  },
-  "directories": {
-    "test": "tests"
-  },
-  "scripts": {
-    "release": "pnpx bumpp --commit --tag && pnpm publish"
-  },
+
+  "homepage": "https://github.com/BHC-IT/stronk-types",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/BHC-IT/stronk-types.git"
@@ -32,5 +18,26 @@
   "bugs": {
     "url": "https://github.com/BHC-IT/stronk-types/issues"
   },
-  "homepage": "https://github.com/BHC-IT/stronk-types"
+  "release": {
+    "branches": ["main"]
+  },
+
+  "types": "./types/index.d.ts",
+  "files": [
+    "./types"
+  ],
+  "directories": {
+    "test": "tests"
+  },
+
+  "scripts": {
+    "release": "pnpx bumpp --commit --tag"
+  },
+
+  "dependencies": {
+    "@type-challenges/utils": "^0.1.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
 }
