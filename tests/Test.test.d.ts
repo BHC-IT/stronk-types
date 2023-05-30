@@ -1,4 +1,4 @@
-import { ExpectTrue, ExpectNever, ExpectFalse, ExpectNotNever, ExpectEqual } from '../types'
+import { ExpectTrue, ExpectNever, ExpectFalse, ExpectNotNever, ExpectEqual, ExpectEmpty } from '../types'
 
 declare namespace ExpectTrue {
   export type TwentyThree = 23
@@ -43,5 +43,10 @@ type __TEST__ = {
     ExpectTrue<ExpectNotNever<string>>,
     ExpectTrue<ExpectNotNever<'literal'>>,
     ExpectTrue<ExpectNotNever<23>>
+  ]
+  // prettier-ignore
+  ExpectEmpty: [
+    ExpectTrue<ExpectEmpty<[]>>,
+    ExpectFalse<ExpectEmpty<['wesh']>>
   ]
 }
