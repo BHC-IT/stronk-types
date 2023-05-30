@@ -31,3 +31,6 @@ export type IfNotNever<Type, OnIsNotNever, OnIsNever = never> = If<
   OnIsNotNever,
   OnIsNever
 >
+
+export type IfAny<Type, OnIsAny, OnIsNotAny = never> = If<IsAny<Type>, OnIsAny, OnIsNotAny>
+export type IfNotAny<Type, OnIsNotAny, OnIsAny = never> = If<IsNotAny<Type>, OnIsNotAny, OnIsAny>
