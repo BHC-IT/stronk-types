@@ -1,14 +1,14 @@
-import { And, Extends, If, IsNotNever, NeverIfNot, Not, Or } from './Conditionals'
+import { Extends, If, IsNotNever, NeverIfNot } from './Conditionals'
 import { ArrayUtils, Traversable } from './ArrayUtils'
 import { Union } from './Union'
-import { Equal, NotEqual } from '@type-challenges/utils'
+import { NotEqual } from '@type-challenges/utils'
 
 export type EmptyString = ''
 export type WhiteSpace = ' ' | '\t' | '\n'
 
 export namespace Letters {
-	export type Lowercase = Union.FromString<'abcdefghijklmnopqrstuvwxyz'>
-	export type Uppercase = Union.FromString<'ABCDEFGHIJKLMNOPQRSTUVWXYZ'>
+  export type Lowercase = Union.FromString<'abcdefghijklmnopqrstuvwxyz'>
+  export type Uppercase = Union.FromString<'ABCDEFGHIJKLMNOPQRSTUVWXYZ'>
 }
 
 export type Letters = Letters.Lowercase | Letters.Uppercase

@@ -2,7 +2,7 @@
     "parser": "babel-ts",
     "printWidth": 150,
     "singleQuote": true,
-    "tabWidth": 4,
+    "tabWidth": 2,
     "useTabs": false,
     "semi": false,
     "arrowParens": "avoid",

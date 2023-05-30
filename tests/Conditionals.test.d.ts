@@ -1,6 +1,6 @@
 import { Expect, Equal, ExpectTrue, ExpectFalse } from '@type-challenges/utils'
 
-import { Extends, If, Not, And, Or, Xor, NeverIf, NeverIfNot, IsNever, IfNever } from '..'
+import { Extends, If, Not, And, Or, Xor, NeverIf, NeverIfNot, IsNever, IfNever } from '../types'
 
 // prettier-ignore
 type __TEST__ = {
