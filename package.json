@@ -17,20 +17,12 @@
   "bugs": {
     "url": "https://github.com/BHC-IT/stronk-types/issues"
   },
-  "release": {
-    "branches": [
-      "main"
-    ]
-  },
   "types": "./types/index.d.ts",
   "files": [
     "./types"
   ],
   "directories": {
     "test": "tests"
-  },
-  "scripts": {
-    "bump": "pnpx bumpp --commit --tag"
   },
   "dependencies": {
     "@type-challenges/utils": "^0.1.1"
