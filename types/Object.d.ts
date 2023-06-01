@@ -1,4 +1,10 @@
-import { IfNotAny, IfNotNever, IsNotAny, IsNotNever } from './Conditionals'
+import { Accessor, EmptyArray, MergeInsertions, Traversable } from '.'
+import { If, IsNotAny, IsNotNever } from './Conditionals'
+import { Union } from './Union'
+
+export type ObjectEntry = [Accessor, unknown]
+
+export type PartialRecord<Keys extends Accessor = Accessor, Values = unknown> = Partial<Record<Keys,Values>>
 
 export namespace Object {
   /** Check that an object type is neither `never` not `any` */
