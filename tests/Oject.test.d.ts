@@ -12,7 +12,7 @@ declare module '../types' {
         prop2: string
       }
       optional?: 23
-      polymorphic: string | number
+      polymorphic?: string | number
     }
 
     type __TEST__ = {
@@ -77,7 +77,7 @@ declare module '../types' {
             | ['number', number]
             | ['object', { prop1: string; prop2: string }]
             | ['optional', 23 | undefined]
-            | ['polymorphic', string | number]
+            | ['polymorphic', string | number | undefined]
           >
         >,
         ExpectEmpty<Entries<{}>>

@@ -3,9 +3,7 @@ import { If, IfExtends, IsNotAny, IsNotNever } from './Conditionals'
 
 export type ObjectEntry = [Accessor, unknown]
 
-export type PartialRecord<Keys extends Accessor = Accessor, Values = unknown> = Partial<
-  Record<Keys, Values>
->
+export type PartialRecord<Keys extends Accessor, Values> = Partial<Record<Keys, Values>>
 
 export namespace Object {
   /** Check that an object type's is neither `never` not `any` */
