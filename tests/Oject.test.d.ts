@@ -32,5 +32,8 @@ declare module '../types' {
         // @ts-expect-error
         Keys<'sauce'>
       ]
+      Values: [
+        Expect<Equal<Values<Dummy>, Dummy['aString'] | Dummy['aNumber'] | Dummy['anObject']>>
+      ]
   }
 }

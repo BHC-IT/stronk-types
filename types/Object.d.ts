@@ -13,4 +13,7 @@ export namespace Object {
   /** Extract an object's keys as union */
   export type Keys<T extends object> = If<IsKnown<T>, keyof T>
 
+  /** Get an union of all the values in an object */
+  export type Values<T extends object> = If<IsKnown<T>, T[keyof T]>
+
 }
