@@ -16,4 +16,9 @@ export namespace Object {
   /** Get an union of all the values in an object */
   export type Values<T extends object> = If<IsKnown<T>, T[keyof T]>
 
+  /** Get an union of all the entries in an object */
+  export type Entries<T extends object, Keys extends keyof T = keyof T> = Values<{
+    [k in Keys]: [k, T[k]]
+  }>
+
 }
