@@ -7,7 +7,7 @@ export type ObjectEntry = [Accessor, unknown]
 export type PartialRecord<Keys extends Accessor = Accessor, Values = unknown> = Partial<Record<Keys,Values>>
 
 export namespace Object {
-  /** Check that an object type is neither `never` not `any` */
+  /** Check that an object type's is neither `never` not `any` */
   export type IsKnown<T extends object> = IsNotNever<IsNotNever<T> & IsNotAny<T>>
 
   /** Extract an object's keys as union */
