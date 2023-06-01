@@ -24,10 +24,10 @@ export namespace Object {
 
   // prettier-ignore
   /** Construct an object from an array of [key, value] pairs */
-  export type FromEntries<E extends Traversable<ObjectEntry>>
-    = E extends EmptyArray
+  export type FromEntries<Entries extends Traversable<ObjectEntry>>
+    = Entries extends EmptyArray
       ? {}
-      : E extends [infer First extends ObjectEntry, ...infer Tail extends ObjectEntry[]]
+      : Entries extends [infer First extends ObjectEntry, ...infer Tail extends ObjectEntry[]]
         ? MergeInsertions<
             & IfExtends<First[1], NonNullable<First[1]>,
               { [k in First[0]]: First[1] },
