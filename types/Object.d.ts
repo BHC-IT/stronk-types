@@ -1,10 +1,12 @@
-import { Accessor, EmptyArray, MergeInsertions, Traversable } from '.'
-import { If, IsNotAny, IsNotNever } from './Conditionals'
+import { Accessor, EmptyArray, MergeInsertions, PartialExcept, Traversable } from '.'
+import { If, IfExtends, IsNotAny, IsNotNever } from './Conditionals'
 import { Union } from './Union'
 
 export type ObjectEntry = [Accessor, unknown]
 
-export type PartialRecord<Keys extends Accessor = Accessor, Values = unknown> = Partial<Record<Keys,Values>>
+export type PartialRecord<Keys extends Accessor = Accessor, Values = unknown> = Partial<
+  Record<Keys, Values>
+>
 
 export namespace Object {
   /** Check that an object type's is neither `never` not `any` */
@@ -17,9 +19,11 @@ export namespace Object {
   export type Values<T extends object> = If<IsKnown<T>, T[keyof T]>
 
   /** Get an union of all the entries in an object */
-  export type Entries<T extends object, Keys extends keyof T = keyof T> = Values<{
-    [k in Keys]: [k, T[k]]
-  }>
+  export type Entries<T extends object, Keys extends keyof T = keyof T> = Values<
+    Required<{
+      [k in Keys]: [k, T[k]]
+    }>
+  >
 
   // prettier-ignore
   /** Construct an object from an array of [key, value] pairs */
