@@ -1,7 +1,7 @@
 import { MergeInsertions } from '@type-challenges/utils'
 
 import { Opaque } from './Util'
-import { If } from './Conditionals'
+import { If, IfNot } from './Conditionals'
 import { StringUtils, EmptyString } from './StringUtils'
 import { ReadonlyArray } from './ArrayUtils'
 import { Object } from './Object'
@@ -30,8 +30,9 @@ type __FromString<S extends string>
 export namespace Union {
   /** Generate an union of single characters from a string */
   export type FromString<S extends string, NeverSingleChar extends boolean = false>
-    = StringUtils.Length<S> extends 1 | 0 ? If<NeverSingleChar, never, S>
-    : __FromString<S>
+    = StringUtils.Length<S> extends 1 | 0
+      ? IfNot<NeverSingleChar, S>
+      : __FromString<S>
 
   /** The 26 alphabetical characters as an Union */
   export namespace Alphabet {
