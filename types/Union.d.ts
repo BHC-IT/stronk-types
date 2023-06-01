@@ -22,9 +22,11 @@ type __Strict<T extends object, TAll extends T>
 
 // prettier-ignore
 type __FromString<S extends string>
-  = S extends EmptyString ? never
-  : S extends `${infer Head}${infer Tail extends string}` ? Head | __FromString<Tail>
-  : never;
+  = S extends EmptyString
+    ? never
+    : S extends `${infer Head}${infer Tail extends string}`
+      ? Head | __FromString<Tail>
+      : never
 
 // prettier-ignore
 export namespace Union {
