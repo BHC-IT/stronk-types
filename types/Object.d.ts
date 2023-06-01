@@ -1,6 +1,5 @@
-import { Accessor, EmptyArray, MergeInsertions, PartialExcept, Traversable } from '.'
+import { Accessor, EmptyArray, MergeInsertions, Traversable } from '.'
 import { If, IfExtends, IsNotAny, IsNotNever } from './Conditionals'
-import { Union } from './Union'
 
 export type ObjectEntry = [Accessor, unknown]
 

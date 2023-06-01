@@ -1,17 +1,18 @@
-import { Equal, Expect, ExpectEmpty, ExpectFalse, ExpectNever, ExpectTrue } from '../types'
+import { Equal, Expect, ExpectEmpty, ExpectFalse, ExpectNever, ExpectTrue, Extends } from '../types'
 
 import '../types'
 
 declare module '../types' {
   namespace Object {
     export interface Dummy {
-      aString: string
-      aNumber: number
-      anObject: {
+      string: string
+      number: number
+      object: {
         prop1: string
         prop2: string
       }
       optional?: 23
+      polymorphic: string | number
     }
 
     type __TEST__ = {
@@ -22,11 +23,27 @@ declare module '../types' {
         ExpectFalse<IsKnown<never>>
       ]
       Keys: [
-        Expect<Equal<Keys<Dummy>, 'aString' | 'aNumber' | 'anObject' | 'optional'>>,
+        // prettier-ignore
+        Expect<
+          Equal<
+            Keys<Dummy>,
+            | 'string'
+            | 'number'
+            | 'object'
+            | 'optional'
+            | 'polymorphic'
+          >
+        >,
+        // prettier-ignore
         Expect<
           Equal<
             Keys<Dummy & { sauce: string }>,
-            'aString' | 'aNumber' | 'anObject' | 'optional' | 'sauce'
+            | 'string'
+            | 'number'
+            | 'object'
+            | 'optional'
+            | 'polymorphic'
+            | 'sauce'
           >
         >,
         ExpectNever<Keys<Dummy | { sauce: string }>>,
@@ -37,25 +54,30 @@ declare module '../types' {
         Keys<'sauce'>
       ]
       Values: [
+        // prettier-ignore
         Expect<
           Equal<
             Values<Dummy>,
-            Dummy['aString'] | Dummy['aNumber'] | Dummy['anObject'] | Dummy['optional']
+            | Dummy['string']
+            | Dummy['number']
+            | Dummy['object']
+            | Dummy['optional']
           >
         >
       ]
       Entries: [
-        Expect<Equal<Entries<Dummy, 'aString'>, ['aString', Dummy['aString']]>>,
-        Expect<Equal<Entries<Dummy, 'aNumber'>, ['aNumber', Dummy['aNumber']]>>,
-        Expect<Equal<Entries<Dummy, 'anObject'>, ['anObject', Dummy['anObject']]>>,
+        Expect<Equal<Entries<Dummy, 'string'>, ['string', Dummy['string']]>>,
+        Expect<Equal<Entries<Dummy, 'number'>, ['number', Dummy['number']]>>,
+        Expect<Equal<Entries<Dummy, 'object'>, ['object', Dummy['object']]>>,
         Expect<Equal<Entries<Dummy, 'optional'>, ['optional', Dummy['optional']]>>,
         Expect<
           Equal<
             Entries<Dummy>,
-            | ['aString', string]
-            | ['aNumber', number]
-            | ['anObject', { prop1: string; prop2: string }]
+            | ['string', string]
+            | ['number', number]
+            | ['object', { prop1: string; prop2: string }]
             | ['optional', 23 | undefined]
+            | ['polymorphic', string | number]
           >
         >,
         ExpectEmpty<Entries<{}>>
