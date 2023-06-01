@@ -50,7 +50,7 @@ declare module '../types' {
         ExpectNever<Keys<{}>>,
         ExpectNever<Keys<never>>,
         ExpectNever<Keys<any>>,
-        // @ts-expect-error
+        // @ts-expect-error Not an object
         Keys<'sauce'>
       ]
       Values: [
