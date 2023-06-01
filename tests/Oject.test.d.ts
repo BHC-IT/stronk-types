@@ -98,6 +98,14 @@ declare module '../types' {
           >
         >
       ]
+      RequireOne: [
+        Expect<
+          Extends<
+            RequireOne<{ prop1?: string; prop2?: number }>,
+            { prop1: string; prop2?: number } | { prop1?: string; prop2: number }
+          >
+        >,
+      ]
     }
   }
 }

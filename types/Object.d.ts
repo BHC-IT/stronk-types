@@ -37,4 +37,9 @@ export namespace Object {
             & FromEntries<Tail>
           >
         : never
+
+  /** Build {@link PartialRecord}-like object that requires at least one field to be filled */
+  type RequireOne<T extends object> = Values<{
+    [key in Object.Keys<T>]: PartialExcept<Required<T>, key>
+  }>
 }
