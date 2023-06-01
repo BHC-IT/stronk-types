@@ -1,9 +1,15 @@
-import { ExpectExtends as Extends, IsAny, NotAny as IsNotAny } from '@type-challenges/utils'
+import { ExpectExtends, IsAny, NotAny as IsNotAny } from '@type-challenges/utils'
 
-export { IsAny, IsNotAny, Extends }
+export { IsAny, IsNotAny, ExpectExtends }
 
 export type If<Test extends boolean, OnTrue, OnFalse = never> = Test extends true ? OnTrue : OnFalse
 
+// prettier-ignore
+export type Extends<Type, ToExtend>
+  // This first check accounts for distributivity in types
+  = (Type extends ToExtend ? true : false) extends true
+    ? true
+    : false
 export type NotExtends<Type, ToExtend> = Not<Extends<Type, ToExtend>>
 
 export type Not<Test extends boolean> = If<Test, false, true>

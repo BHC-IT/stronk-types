@@ -4,6 +4,7 @@ import { Extends, If, Not, And, Or, Xor, NeverIf, NeverIfNot, IsNever, IfNever }
 
 // prettier-ignore
 type __TEST__ = {
+  // prettier-ignore
   If: [
     ExpectTrue<If<true, true, false>>,
     ExpectFalse<If<false, true, false>>,
@@ -14,9 +15,12 @@ type __TEST__ = {
     ExpectTrue<Extends<'sauce', string>>,
     ExpectTrue<Extends<23 | 42, number>>,
     ExpectTrue<Extends<23, 23 | 42>>,
+    ExpectTrue<Extends<{ oui: 'vasy'; ouioui: 'tut tut' }, { oui: 'vasy' }>>,
+    ExpectTrue<Extends<{ poly: string | number }, { poly: string }>>,
+    ExpectFalse<Extends<string | number, string>>,
     ExpectFalse<Extends<23 | 42, 23>>,
     ExpectFalse<Extends<number, 23 | 42>>,
-    ExpectFalse<Extends<string, 'sauce'>>,
+    ExpectFalse<Extends<string, 'sauce'>>
   ]
   Not: [
     ExpectTrue<Not<false>>,
