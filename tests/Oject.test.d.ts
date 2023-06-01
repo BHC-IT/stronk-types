@@ -13,22 +13,24 @@ declare module '../types' {
       }
     }
 
-    // prettier-ignore
     type __TEST__ = {
-        IsKnown: [
-          ExpectTrue<IsKnown<Dummy>>,
-          ExpectTrue<IsKnown<{}>>,
-          ExpectFalse<IsKnown<any>>,
-          ExpectFalse<IsKnown<never>>
-        ]
-        Keys: [
-          Expect<Equal<Keys<Dummy>, 'aString' | 'aNumber' | 'anObject'>>,
-          ExpectNever<Keys<{}>>,
-          ExpectNever<Keys<never>>,
-          ExpectNever<Keys<any>>,
-          // @ts-expect-error
-          Keys<'sauce'>,
-        ],
-      }
+      IsKnown: [
+        ExpectTrue<IsKnown<Dummy>>,
+        ExpectTrue<IsKnown<{}>>,
+        ExpectFalse<IsKnown<any>>,
+        ExpectFalse<IsKnown<never>>
+      ]
+      Keys: [
+        Expect<Equal<Keys<Dummy>, 'aString' | 'aNumber' | 'anObject'>>,
+        Expect<
+          Equal<Keys<Dummy & { sauce: string }>, 'aString' | 'aNumber' | 'anObject' | 'sauce'>
+        >,
+        ExpectNever<Keys<Dummy | { sauce: string }>>,
+        ExpectNever<Keys<{}>>,
+        ExpectNever<Keys<never>>,
+        ExpectNever<Keys<any>>,
+        // @ts-expect-error
+        Keys<'sauce'>
+      ]
   }
 }
