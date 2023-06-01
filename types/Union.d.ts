@@ -8,8 +8,17 @@ import { Object } from './Object'
 
 // prettier-ignore
 type __Strict<T extends object, TAll extends T>
-  = T extends T ? MergeInsertions<T & Partial<Record<Exclude<Object.Keys<TAll>, keyof T>, never>>>
-  : never
+  = T extends T
+    ? MergeInsertions<
+      & T
+      & Partial<
+          Record<
+            Exclude<Object.Keys<TAll>, keyof T>,
+            never
+          >
+        >
+      >
+    : never
 
 // prettier-ignore
 type __FromString<S extends string>
