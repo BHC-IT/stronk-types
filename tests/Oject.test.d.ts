@@ -86,7 +86,13 @@ declare module '../types' {
         Expect<
           Equal<
             FromEntries<
-              [Entries<Dummy, 'aString'>, Entries<Dummy, 'aNumber'>, Entries<Dummy, 'anObject'>]
+              [
+                Entries<Dummy, 'string'>,
+                Entries<Dummy, 'number'>,
+                Entries<Dummy, 'object'>,
+                Entries<Dummy, 'optional'>,
+                Entries<Dummy, 'polymorphic'>
+              ]
             >,
             Dummy
           >

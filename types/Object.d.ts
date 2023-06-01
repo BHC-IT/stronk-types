@@ -30,6 +30,12 @@ export namespace Object {
     = E extends EmptyArray
       ? {}
       : E extends [infer First extends ObjectEntry, ...infer Tail extends ObjectEntry[]]
-        ? MergeInsertions<{[k in First[0]]: First[1]} & FromEntries<Tail>>
+        ? MergeInsertions<
+            & IfExtends<First[1], NonNullable<First[1]>,
+              { [k in First[0]]: First[1] },
+              { [k in First[0]]?: First[1] }
+            >
+            & FromEntries<Tail>
+          >
         : never
 }
