@@ -12,6 +12,7 @@ import {
   IsNever,
   IfNever,
   MutuallyExtend,
+  IfNot,
 } from '../types'
 
 type __TEST__ = {
@@ -19,6 +20,11 @@ type __TEST__ = {
   If: [
     ExpectTrue<If<true, true, false>>,
     ExpectFalse<If<false, true, false>>,
+  ]
+  // prettier-ignore
+  IfNot: [
+    ExpectTrue<IfNot<false, true, false>>,
+    ExpectFalse<IfNot<true, true, false>>
   ]
   // If any edge case comes up when this type misbehaves,
   // add it here before editing the type.

@@ -2,7 +2,16 @@ import { ExpectExtends, IsAny, NotAny as IsNotAny } from '@type-challenges/utils
 
 export { IsAny, IsNotAny, ExpectExtends }
 
-export type If<Test extends boolean, OnTrue, OnFalse = never> = Test extends true ? OnTrue : OnFalse
+// prettier-ignore
+export type If<Test extends boolean, OnTrue, OnFalse = never>
+  = Test extends true
+    ? OnTrue
+    : OnFalse
+// prettier-ignore
+export type IfNot<Test extends boolean, OnFalse, OnTrue = never>
+  = Test extends false
+    ? OnFalse
+    : OnTrue
 
 // prettier-ignore
 export type Extends<Type, ToExtend>
