@@ -1,8 +1,19 @@
-import { Expect, Equal, ExpectTrue, ExpectFalse } from '@type-challenges/utils'
+import { Expect, Equal, ExpectTrue, ExpectFalse, MergeInsertions } from '@type-challenges/utils'
 
-import { Extends, If, Not, And, Or, Xor, NeverIf, NeverIfNot, IsNever, IfNever } from '../types'
+import {
+  Extends,
+  If,
+  Not,
+  And,
+  Or,
+  Xor,
+  NeverIf,
+  NeverIfNot,
+  IsNever,
+  IfNever,
+  MutuallyExtend,
+} from '../types'
 
-// prettier-ignore
 type __TEST__ = {
   // prettier-ignore
   If: [
@@ -22,6 +33,19 @@ type __TEST__ = {
     ExpectFalse<Extends<number, 23 | 42>>,
     ExpectFalse<Extends<string, 'sauce'>>
   ]
+  MutuallyExtend: [
+    ExpectTrue<MutuallyExtend<string, string>>,
+    ExpectTrue<MutuallyExtend<number | string, string | number>>,
+    ExpectTrue<MutuallyExtend<{ oui: string; non: number }, { oui: string } & { non: number }>>,
+    ExpectTrue<
+      MutuallyExtend<
+        MergeInsertions<{ oui: string } & { non: number }>,
+        { oui: string; non: number }
+      >
+    >,
+    ExpectFalse<MutuallyExtend<{ clique: 'salope'; 92: 'easy' }, { 92: 'easy' }>>
+  ]
+  // prettier-ignore
   Not: [
     ExpectTrue<Not<false>>,
     ExpectFalse<Not<true>>,
