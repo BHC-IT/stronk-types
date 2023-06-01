@@ -49,5 +49,15 @@ declare module '../types' {
         >,
         ExpectEmpty<Entries<{}>>
       ]
+      FromEntries: [
+        Expect<
+          Equal<
+            FromEntries<
+              [Entries<Dummy, 'aString'>, Entries<Dummy, 'aNumber'>, Entries<Dummy, 'anObject'>]
+            >,
+            Dummy
+          >
+        >
+      ]
   }
 }

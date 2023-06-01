@@ -21,4 +21,12 @@ export namespace Object {
     [k in Keys]: [k, T[k]]
   }>
 
+  // prettier-ignore
+  /** Construct an object from an array of [key, value] pairs */
+  export type FromEntries<E extends Traversable<ObjectEntry>>
+    = E extends EmptyArray
+      ? {}
+      : E extends [infer First extends ObjectEntry, ...infer Tail extends ObjectEntry[]]
+        ? MergeInsertions<{[k in First[0]]: First[1]} & FromEntries<Tail>>
+        : never
 }
