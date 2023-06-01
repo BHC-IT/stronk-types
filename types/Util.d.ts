@@ -35,4 +35,7 @@ export namespace Opaque {
 }
 
 export type PartialExcept<T, K extends keyof T>
-  = MergeInsertions<Partial<T> & Pick<T, K>>
+  = MergeInsertions<
+    & Partial<T>
+    & Pick<T, K>
+  >
