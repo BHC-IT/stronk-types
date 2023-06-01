@@ -1,5 +1,7 @@
 import { MergeInsertions } from "@type-challenges/utils"
 
+export { MergeInsertions }
+
 export type Primitive = string | number
 export type Accessor = keyof any
 
