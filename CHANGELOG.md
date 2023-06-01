@@ -1,3 +1,28 @@
+# [4.0.0](https://github.com/BHC-IT/stronk-types/compare/v3.0.0...v4.0.0) (2023-06-01)
+
+
+### Bug Fixes
+
+* **Object:** Optional fields break FromEntries ([48ebe41](https://github.com/BHC-IT/stronk-types/commit/48ebe41f014c1f58ec8303a2b1bb86d2fb4dae50))
+* **Test/Object:** Missing closing bracket ([a185ca5](https://github.com/BHC-IT/stronk-types/commit/a185ca54e0a1341355e1c20649b0c88c066d4935))
+
+
+### Code Refactoring
+
+* **Object:** Make PartialRecord parameters mandatory ([9c23a2f](https://github.com/BHC-IT/stronk-types/commit/9c23a2f7b17d8e940d751e813b5e491c27ebb5ba))
+
+
+### Features
+
+* **Conditionals:** Add IfNot ([8988ca7](https://github.com/BHC-IT/stronk-types/commit/8988ca703dae2b112941ca178c62a4ef63de28c0))
+* **Object:** Add RequireOne ([dfeedcc](https://github.com/BHC-IT/stronk-types/commit/dfeedcc87de5127237851aa1b5b639cfc82d72da))
+* **Object:** Add support for optional props in Entries and Values ([a4b512d](https://github.com/BHC-IT/stronk-types/commit/a4b512dae3fc834989a8eb686f20d164ae37a332))
+
+
+### BREAKING CHANGES
+
+* **Object:** PartialRecord parameters are now *required*
+
 # [3.0.0](https://github.com/BHC-IT/stronk-types/compare/v2.1.0...v3.0.0) (2023-06-01)
 
 
