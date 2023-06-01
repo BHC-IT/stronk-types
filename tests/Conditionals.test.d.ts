@@ -27,7 +27,7 @@ type __TEST__ = {
     ExpectTrue<Extends<23 | 42, number>>,
     ExpectTrue<Extends<23, 23 | 42>>,
     ExpectTrue<Extends<{ oui: 'vasy'; ouioui: 'tut tut' }, { oui: 'vasy' }>>,
-    ExpectTrue<Extends<{ poly: string | number }, { poly: string }>>,
+    ExpectFalse<Extends<{ poly: string | number }, { poly: string }>>,
     ExpectFalse<Extends<string | number, string>>,
     ExpectFalse<Extends<23 | 42, 23>>,
     ExpectFalse<Extends<number, 23 | 42>>,
