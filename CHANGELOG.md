@@ -1,3 +1,29 @@
+# [3.0.0](https://github.com/BHC-IT/stronk-types/compare/v2.1.0...v3.0.0) (2023-06-01)
+
+
+### Bug Fixes
+
+* **Conditionals:** Extends doesn't respect `extends` keyword behaviour ([530c4ea](https://github.com/BHC-IT/stronk-types/commit/530c4ea802bcb5d13c8f00d7a67764cb96ef6a6a))
+
+
+### chore
+
+* **Object:** Remove Entry (use Entries instead) ([18c3044](https://github.com/BHC-IT/stronk-types/commit/18c304479ae73be44f4259b39ba5359c1c6953dd))
+
+
+### Features
+
+* **Conditionals:** Add MutuallyExtend ([831563b](https://github.com/BHC-IT/stronk-types/commit/831563b80472a4f33f36496248566dce040b820f))
+* **Object:** Add Entries ([ffc8c1e](https://github.com/BHC-IT/stronk-types/commit/ffc8c1e3aa329813d8837c8b40b3373d5eefbe27))
+* **Object:** Add Entries ([cc9df2a](https://github.com/BHC-IT/stronk-types/commit/cc9df2adc28cd7bcb8fcf8a885bf74c0cf0195f7))
+* **Object:** Add ObjectEntry and PartialRecord ([34dd411](https://github.com/BHC-IT/stronk-types/commit/34dd411065eb1e9d1511732666286d64ad474364))
+* **Object:** Add Values ([bdd7479](https://github.com/BHC-IT/stronk-types/commit/bdd7479ec5605ef7efeefb70ed718091d4252678))
+
+
+### BREAKING CHANGES
+
+* **Object:** Entry has been removed
+
 # [2.1.0](https://github.com/BHC-IT/stronk-types/compare/v2.0.0...v2.1.0) (2023-05-30)
 
 
