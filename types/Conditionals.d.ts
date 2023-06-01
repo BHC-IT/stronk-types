@@ -14,6 +14,16 @@ export type NotExtends<Type, ToExtend> = Not<Extends<Type, ToExtend>>
 export type MutuallyExtend<T1, T2> = If<Extends<T1, T2>, Extends<T2, T1>, false>
 
 export type IfExtends<Type, ToExtend, OnExtends, OnNotExtends = never> = If<
+  Extends<Type, ToExtend>,
+  OnExtends,
+  OnNotExtends
+>
+export type IfNotExtends<Type, ToExtend, OnNotExtends, OnExtends = never> = If<
+  Not<Extends<Type, ToExtend>>,
+  OnNotExtends,
+  OnExtends
+>
+
 export type Not<Test extends boolean> = If<Test, false, true>
 export type And<A extends boolean, B extends boolean> = If<A, If<B, true, false>, false>
 export type Or<A extends boolean, B extends boolean> = If<A, true, If<B, true, false>>
