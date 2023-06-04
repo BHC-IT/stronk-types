@@ -1,4 +1,4 @@
-import { Accessor, MergeInsertions, PartialExcept } from './Util'
+import { Accessor, MergeInsertions, Opaque, PartialExcept } from './Util'
 import { EmptyArray, Traversable } from './ArrayUtils'
 import { If, IfExtends, IsNotAny, IsNotNever } from './Conditionals'
 
@@ -39,7 +39,7 @@ export namespace Object {
         : never
 
   /** Build {@link PartialRecord}-like object that requires at least one field to be filled */
-  type RequireOne<T extends object> = Values<{
-    [key in Object.Keys<T>]: PartialExcept<Required<T>, key>
+  type SemiPartial<T extends object> = Values<{
+    [key in Keys<T>]: PartialExcept<Required<T>, key>
   }>
 }
