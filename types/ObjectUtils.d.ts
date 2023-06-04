@@ -6,7 +6,7 @@ export type ObjectEntry = [Accessor, unknown]
 
 export type PartialRecord<Keys extends Accessor, Values> = Partial<Record<Keys, Values>>
 
-export namespace Object {
+export namespace ObjectUtils {
   /** Check that an object type's is neither `never` not `any` */
   export type IsKnown<T extends object> = IsNotNever<IsNotNever<T> & IsNotAny<T>>
 
