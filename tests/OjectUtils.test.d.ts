@@ -1,4 +1,12 @@
-import { Equal, Expect, ExpectEmpty, ExpectFalse, ExpectNever, ExpectTrue, MergeInsertions } from '../types'
+import {
+  Equal,
+  Expect,
+  ExpectEmpty,
+  ExpectFalse,
+  ExpectNever,
+  ExpectTrue,
+  MergeInsertions,
+} from '../types'
 
 import '../types'
 
