@@ -45,6 +45,7 @@ export namespace Object {
       : T
 
   export type OnlyRequired<T extends object> = __OnlyRequired<T>
+  export type OnlyOptional<T extends object> = Omit<T, Keys<OnlyRequired<T>>>
 
   /** Build {@link PartialRecord}-like object that requires at least one field to be filled */
   type SemiPartial<T extends object> = Values<{
