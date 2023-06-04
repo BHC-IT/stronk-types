@@ -56,4 +56,9 @@ export namespace Object {
   type SemiPartial<T extends object> = Values<{
     [key in Keys<T>]: PartialExcept<Required<T>, key>
   }>
+
+  /** Make it so at least one of the optional fields in {@link T} is required to be filled */
+  type RequireOneOptional<T extends object> = MergeInsertions<
+    OnlyRequired<T> & SemiPartial<OnlyOptional<T>>
+  >
 }
