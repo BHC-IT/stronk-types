@@ -1,4 +1,4 @@
-import { Accessor, MergeInsertions, Opaque, PartialExcept } from './Util'
+import { Accessor, MergeInsertions, PartialExcept } from './Util'
 import { EmptyArray, Traversable } from './ArrayUtils'
 import { If, IfExtends, IsNotAny, IsNotNever } from './Conditionals'
 
