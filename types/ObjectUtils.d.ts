@@ -38,6 +38,14 @@ export namespace Object {
           >
         : never
 
+  // prettier-ignore
+  type __OnlyRequired<T>
+    = T extends object
+      ? { [K in keyof T as {} extends Pick<T, K> ? never : K]: __OnlyRequired<T[K]> }
+      : T
+
+  export type OnlyRequired<T extends object> = __OnlyRequired<T>
+
   /** Build {@link PartialRecord}-like object that requires at least one field to be filled */
   type SemiPartial<T extends object> = Values<{
     [key in Keys<T>]: PartialExcept<Required<T>, key>
