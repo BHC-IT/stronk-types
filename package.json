@@ -17,10 +17,8 @@
   "bugs": {
     "url": "https://github.com/BHC-IT/stronk-types/issues"
   },
-  "types": "./types/index.d.ts",
-  "files": [
-    "./types"
-  ],
+  "type": "module",
+  "exports": "./types/index.d.ts",
   "directories": {
     "test": "tests"
   },
