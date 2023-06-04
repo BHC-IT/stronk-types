@@ -15,8 +15,7 @@ declare module '../types' {
         ExpectTrue<IsValidVariableNameTail<'PascalCase'>>,
         ExpectTrue<IsValidVariableNameTail<'camelCase'>>,
         ExpectTrue<IsValidVariableNameTail<'enumerated23'>>,
-        // FIXME
-        ExpectFalse<IsValidVariableNameTail<'1start_with_num'>>,
+        ExpectTrue<IsValidVariableNameTail<'1start_with_num'>>,
         ExpectFalse<IsValidVariableNameTail<'Forbidden-Characters!'>>,
       ]
       IsValidVariableName: [
