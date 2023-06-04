@@ -25,10 +25,8 @@ export namespace StringUtils {
   type IsValidVariableNameTail<S extends string>
     = S extends EmptyString
       ? true
-      :  S extends `${VariableNameChars}${infer Tail}`
-        ? Tail extends EmptyString
-          ? true
-          : IsValidVariableNameTail<Tail>
+      : S extends `${VariableNameChars}${infer Tail}`
+        ? IsValidVariableNameTail<Tail>
         : false
 
   /**
