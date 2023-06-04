@@ -1,3 +1,25 @@
+# [5.0.0](https://github.com/BHC-IT/stronk-types/compare/v4.0.0...v5.0.0) (2023-06-04)
+
+
+### Code Refactoring
+
+* **Object:** Rename Object to ObjectUtils ([b36e112](https://github.com/BHC-IT/stronk-types/commit/b36e112d91066b80220b7f553e54332b377d0272))
+* **Object:** Rename RequireOne to SemiPartial ([e9de506](https://github.com/BHC-IT/stronk-types/commit/e9de5060cf50307ecdfa4a1efe361dd35a81ea97))
+
+
+### Features
+
+* **Object:** Add Keys.Required and Keys.Optional ([dcd60a3](https://github.com/BHC-IT/stronk-types/commit/dcd60a3a67b9cc7d124aa3c3c4b0556fadb2f09c))
+* **Object:** Add OnlyOptional ([9c8b631](https://github.com/BHC-IT/stronk-types/commit/9c8b631e5775cc002e6b77ca777f1899dfa4c08d))
+* **Object:** Add OnlyRequired ([98bf3d2](https://github.com/BHC-IT/stronk-types/commit/98bf3d2e6128e7898dfca0447ec31964ee798f17))
+* **Object:** Add RequireOneOptional ([a7709f5](https://github.com/BHC-IT/stronk-types/commit/a7709f5a221b2c858ad02cbdebb906c90d2d2da1))
+
+
+### BREAKING CHANGES
+
+* **Object:** Object namespace has been renamed to avoid clashing with global interface
+* **Object:** RequireOne has been renamed
+
 # [4.0.0](https://github.com/BHC-IT/stronk-types/compare/v3.0.0...v4.0.0) (2023-06-01)
 
 
