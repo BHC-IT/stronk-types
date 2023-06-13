@@ -49,7 +49,14 @@ export namespace ObjectUtils {
           >
         : never
 
+  /**
+   * Keep only the required props of a type
+   */
   export type OnlyRequired<T extends object> = __OnlyRequired<T>
+
+  /**
+   * Keep only the optional props of a type
+   */
   export type OnlyOptional<T extends object> = Omit<T, Keys<OnlyRequired<T>>>
 
   /** Build {@link PartialRecord}-like object that requires at least one field to be filled */
