@@ -1,3 +1,10 @@
+## [5.0.1](https://github.com/BHC-IT/stronk-types/compare/v5.0.0...v5.0.1) (2023-06-13)
+
+
+### Bug Fixes
+
+* Package doesn't reveal exports ([817f1da](https://github.com/BHC-IT/stronk-types/commit/817f1da1806a533172ba1d57ca641350a535d769))
+
 # [5.0.0](https://github.com/BHC-IT/stronk-types/compare/v4.0.0...v5.0.0) (2023-06-04)
 
 
