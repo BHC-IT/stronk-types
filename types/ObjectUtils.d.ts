@@ -6,6 +6,12 @@ export type ObjectEntry = [Accessor, unknown]
 
 export type PartialRecord<Keys extends Accessor, Values> = Partial<Record<Keys, Values>>
 
+// prettier-ignore
+type __OnlyRequired<T>
+  = T extends object
+    ? { [K in keyof T as {} extends Pick<T, K> ? never : K]: __OnlyRequired<T[K]> }
+    : T
+
 export namespace ObjectUtils {
   /** Check that an object type's is neither `never` not `any` */
   export type IsKnown<T extends object> = IsNotNever<IsNotNever<T> & IsNotAny<T>>
@@ -42,12 +48,6 @@ export namespace ObjectUtils {
             & FromEntries<Tail>
           >
         : never
-
-  // prettier-ignore
-  type __OnlyRequired<T>
-    = T extends object
-      ? { [K in keyof T as {} extends Pick<T, K> ? never : K]: __OnlyRequired<T[K]> }
-      : T
 
   export type OnlyRequired<T extends object> = __OnlyRequired<T>
   export type OnlyOptional<T extends object> = Omit<T, Keys<OnlyRequired<T>>>
