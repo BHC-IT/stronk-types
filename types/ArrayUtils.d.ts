@@ -32,8 +32,8 @@ export namespace ArrayUtils {
    */
   export type FromString<S extends string>
     = S extends `${infer Head}${infer Tail}`
-    ? [Head, ...FromString<Tail>]
-    : []
+      ? [Head, ...FromString<Tail>]
+      : []
 
   /**
    * Convert an array of characters into a string
