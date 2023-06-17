@@ -1,3 +1,15 @@
+## [5.0.2](https://github.com/BHC-IT/stronk-types/compare/v5.0.1...v5.0.2) (2023-06-17)
+
+
+### Code Refactoring
+
+* **Util:** MergeInserstions now goes deep by default ([11f434d](https://github.com/BHC-IT/stronk-types/commit/11f434d9ecc8d2ecb4105e7f2e42f815bb2a2976))
+
+
+### BREAKING CHANGES
+
+* **Util:** MergeInsertions goes deep by default. To merge only top level, use `MergeInsertions.TopLevel`
+
 ## [5.0.1](https://github.com/BHC-IT/stronk-types/compare/v5.0.0...v5.0.1) (2023-06-13)
 
 
