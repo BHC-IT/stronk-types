@@ -1,3 +1,5 @@
+import { MergeInsertions } from "@type-challenges/utils"
+
 export type Primitive = string | number | boolean
 export type Accessor = keyof any
 
@@ -30,14 +32,12 @@ export namespace Opaque {
   export type Strict<T, Tag extends string> = T & Tagged<Tag>
 }
 
-export type MergeInsertions<T> = T extends object ? { [key in keyof T]: T[key] } : T
-
 export namespace MergeInsertions {
-  export type Deep<T> = T extends object ? { [key in keyof T]: Deep<T> } : MergeInsertions<T>
+  export type TopLevel<T> = T extends object ? { [key in keyof T]: T[key] } : T
 }
 
 export type PartialExcept<T, K extends keyof T>
-  = MergeInsertions<
+  = MergeInsertions.TopLevel<
     & Partial<T>
     & Pick<T, K>
   >
