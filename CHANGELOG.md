@@ -1,3 +1,10 @@
+# [5.1.0](https://github.com/BHC-IT/stronk-types/compare/v5.0.2...v5.1.0) (2023-06-24)
+
+
+### Features
+
+* **Util:** Add PickByType ([ec276b3](https://github.com/BHC-IT/stronk-types/commit/ec276b3ae2b1ac7271980fd7b45daf070ccef267))
+
 ## [5.0.2](https://github.com/BHC-IT/stronk-types/compare/v5.0.1...v5.0.2) (2023-06-17)
 
 
