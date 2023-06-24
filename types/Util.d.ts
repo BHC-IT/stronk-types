@@ -41,3 +41,13 @@ export type PartialExcept<T, K extends keyof T>
     & Partial<T>
     & Pick<T, K>
   >
+
+export type PickByType<T extends object, ToPick> = {
+  [k in keyof T as T[k] extends ToPick ? k : never]: T[k]
+}
+
+export namespace PickByType {
+  export type Deep<T extends object, ToPick> = {
+    [k in keyof T as T[k] extends ToPick | object ? k : never]: T[k] extends object ? Deep<T[k], ToPick> : T[k]
+  }
+}
