@@ -1,3 +1,10 @@
+## [5.1.1](https://github.com/BHC-IT/stronk-types/compare/v5.1.0...v5.1.1) (2023-06-25)
+
+
+### Bug Fixes
+
+* MergeInsertions can't be used as a type ([cb7a663](https://github.com/BHC-IT/stronk-types/commit/cb7a6630d2ec578b6c365e92b68a237e970d80db))
+
 # [5.1.0](https://github.com/BHC-IT/stronk-types/compare/v5.0.2...v5.1.0) (2023-06-24)
 
 
