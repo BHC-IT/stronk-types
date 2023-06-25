@@ -1,4 +1,4 @@
-import { MergeInsertions } from "@type-challenges/utils"
+import { MergeInsertions as Merge } from "@type-challenges/utils"
 
 export type Primitive = string | number | boolean
 export type Accessor = keyof any
@@ -32,6 +32,7 @@ export namespace Opaque {
   export type Strict<T, Tag extends string> = T & Tagged<Tag>
 }
 
+export type MergeInsertions<T> = Merge<T>
 export namespace MergeInsertions {
   export type TopLevel<T> = T extends object ? { [key in keyof T]: T[key] } : T
 }
