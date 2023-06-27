@@ -63,3 +63,14 @@ export type IfAny<Type, OnIsAny, OnIsNotAny = never> = If<IsAny<Type>, OnIsAny, 
 export type IfNotAny<Type, OnIsNotAny, OnIsAny = never> = If<IsNotAny<Type>, OnIsNotAny, OnIsAny>
 
 export type IsObject<Type> = Extends<Type, object>
+
+type __IsUnion<T, U> = IfNotNever<T, T extends U ? ([U] extends [T] ? false : true) : never, false>
+export type IsUnion<T> = __IsUnion<T, T>
+export type IsNotUnion<T> = Not<IsUnion<T>>
+
+export type IfUnion<T, OnIsUnion, OnIsNotUnion = never> = If<IsUnion<T>, OnIsUnion, OnIsNotUnion>
+export type IfNotUnion<T, OnIsNotUnion, OnIsUnion = never> = If<
+  IsNotUnion<T>,
+  OnIsNotUnion,
+  OnIsUnion
+>
