@@ -1,3 +1,10 @@
+# [5.2.0](https://github.com/BHC-IT/stronk-types/compare/v5.1.1...v5.2.0) (2023-06-27)
+
+
+### Features
+
+* **Conditionals:** Add IsUnion and corresponding Ifs ([66701bc](https://github.com/BHC-IT/stronk-types/commit/66701bc42872f4a52889302044efc0008a4bdc6d))
+
 ## [5.1.1](https://github.com/BHC-IT/stronk-types/compare/v5.1.0...v5.1.1) (2023-06-25)
 
 
