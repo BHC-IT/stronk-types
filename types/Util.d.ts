@@ -52,3 +52,17 @@ export namespace PickByType {
     [k in keyof T as T[k] extends ToPick | object ? k : never]: T[k] extends object ? Deep<T[k], ToPick> : T[k]
   }
 }
+
+type CreateArrayWithLength<Length extends number, Accumulator extends never[] = []> = Accumulator['length'] extends Length
+  ? Accumulator
+  : CreateArrayWithLength<Length, [...Accumulator, never]>
+
+type NumericRangeCreator<StartArray extends never[], End extends number, Accumulator extends number = never> =
+  StartArray['length'] extends End
+  ? Accumulator | End
+  : NumericRangeCreator<[...StartArray, never], End, Accumulator | StartArray['length']>
+
+/**
+ * Create a union type of number ranging from {@link Start} to {@link End}
+ */
+export type NumericRange<Start extends number, End extends number> = NumericRangeCreator<CreateArrayWithLength<Start>, End>
