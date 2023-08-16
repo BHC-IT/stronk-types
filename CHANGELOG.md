@@ -1,3 +1,10 @@
+# [5.3.0](https://github.com/BHC-IT/stronk-types/compare/v5.2.0...v5.3.0) (2023-08-16)
+
+
+### Features
+
+* **Util:** Add NumericRange<Start, End> ([7d2cd97](https://github.com/BHC-IT/stronk-types/commit/7d2cd97ca3a773db036ad3d165f9e8977cb283ba))
+
 # [5.2.0](https://github.com/BHC-IT/stronk-types/compare/v5.1.1...v5.2.0) (2023-06-27)
 
 

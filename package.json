@@ -2,7 +2,7 @@
   "name": "@bhc/stronk-types",
   "author": "Ludovic Fernandez",
   "description": "A collection of utilities types for very stronkly typed TS projects",
-  "version": "5.2.0",
+  "version": "5.3.0",
   "license": "MIT",
   "homepage": "https://github.com/BHC-IT/stronk-types",
   "repository": {
