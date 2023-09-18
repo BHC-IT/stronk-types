@@ -68,4 +68,9 @@ export namespace ObjectUtils {
   type RequireOneOptional<T extends object> = MergeInsertions<
     OnlyRequired<T> & SemiPartial<OnlyOptional<T>>
   >
+
+  /** Make given keys of an object partial */
+  export type Partialise<T extends object, Keys extends keyof T = keyof T> = MergeInsertions<
+    Omit<T, Keys> & Partial<Pick<T, keyof T>>
+  >
 }

@@ -159,6 +159,10 @@ declare module '../types' {
           >
         >
       ]
+      Partialise: [
+        Expect<Equal<Partialise<Dummy>, Partial<Dummy>>>,
+        Expect<Equal<Partialise<{ 1: string; 2: number }, 1>, { 1?: string; 2: number }>>
+      ]
     }
   }
 }
