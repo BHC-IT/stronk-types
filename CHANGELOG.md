@@ -1,3 +1,10 @@
+# [5.4.0](https://github.com/BHC-IT/stronk-types/compare/v5.3.0...v5.4.0) (2023-09-18)
+
+
+### Features
+
+* **ObjectUtils:** Add Partialise ([07160ca](https://github.com/BHC-IT/stronk-types/commit/07160ca0fea0245d284b6e50aa3ce7cc23edcd59))
+
 # [5.3.0](https://github.com/BHC-IT/stronk-types/compare/v5.2.0...v5.3.0) (2023-08-16)
 
 
