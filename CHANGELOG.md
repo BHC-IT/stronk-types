@@ -1,3 +1,10 @@
+## [5.4.1](https://github.com/BHC-IT/stronk-types/compare/v5.4.0...v5.4.1) (2023-09-19)
+
+
+### Bug Fixes
+
+* **ObjectUtils:** Partialise uses Pick with Keys instead of keyof T ([8b2ebe1](https://github.com/BHC-IT/stronk-types/commit/8b2ebe16f8a269644516f7cc65a9b3c1be12ebca))
+
 # [5.4.0](https://github.com/BHC-IT/stronk-types/compare/v5.3.0...v5.4.0) (2023-09-18)
 
 
