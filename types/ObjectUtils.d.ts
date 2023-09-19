@@ -9,8 +9,8 @@ export type PartialRecord<Keys extends Accessor, Values> = Partial<Record<Keys, 
 // prettier-ignore
 type __OnlyRequired<T>
   = T extends object
-    ? { [K in keyof T as {} extends Pick<T, K> ? never : K]: __OnlyRequired<T[K]> }
-    : T
+  ? { [K in keyof T as {} extends Pick<T, K> ? never : K]: __OnlyRequired<T[K]> }
+  : T
 
 export namespace ObjectUtils {
   /** Check that an object type's is neither `never` not `any` */
@@ -38,16 +38,16 @@ export namespace ObjectUtils {
   /** Construct an object from an array of [key, value] pairs */
   export type FromEntries<Entries extends Traversable<ObjectEntry>>
     = Entries extends EmptyArray
-      ? {}
-      : Entries extends [infer First extends ObjectEntry, ...infer Tail extends ObjectEntry[]]
-        ? MergeInsertions<
-            & IfExtends<First[1], NonNullable<First[1]>,
-              { [k in First[0]]: First[1] },
-              { [k in First[0]]?: First[1] }
-            >
-            & FromEntries<Tail>
-          >
-        : never
+    ? {}
+    : Entries extends [infer First extends ObjectEntry, ...infer Tail extends ObjectEntry[]]
+    ? MergeInsertions<
+      & IfExtends<First[1], NonNullable<First[1]>,
+        { [k in First[0]]: First[1] },
+        { [k in First[0]]?: First[1] }
+      >
+      & FromEntries<Tail>
+    >
+    : never
 
   /**
    * Keep only the required props of a type
@@ -71,6 +71,6 @@ export namespace ObjectUtils {
 
   /** Make given keys of an object partial */
   export type Partialise<T extends object, Keys extends keyof T = keyof T> = MergeInsertions<
-    Omit<T, Keys> & Partial<Pick<T, keyof T>>
+    Omit<T, Keys> & Partial<Pick<T, Keys>>
   >
 }
