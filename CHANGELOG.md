@@ -1,3 +1,10 @@
+# [5.5.0](https://github.com/BHC-IT/stronk-types/compare/v5.4.1...v5.5.0) (2023-09-29)
+
+
+### Features
+
+* **Json:** Add simple Json types ([08c6cea](https://github.com/BHC-IT/stronk-types/commit/08c6ceaa1ce00cad502530896f5da17d66cd7f1e))
+
 ## [5.4.1](https://github.com/BHC-IT/stronk-types/compare/v5.4.0...v5.4.1) (2023-09-19)
 
 
