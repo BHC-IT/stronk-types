@@ -1,6 +1,7 @@
 export * from './ArrayUtils'
 export * from './Conditionals'
 export * from './Freeze'
+export * from './Json'
 export * from './ObjectUtils'
 export * from './StringUtils'
 export * from './Test'
