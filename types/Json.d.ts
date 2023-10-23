@@ -1,3 +1,3 @@
 export type JsonValue = string | number | boolean | JsonValue[]
 
-export type JsonDocument = JsonValue | { [x: string]: JsonDocument }
+export type JsonDocument = JsonValue | { [x: string | number]: JsonDocument }
