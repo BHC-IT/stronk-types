@@ -1,3 +1,10 @@
+## [5.5.3](https://github.com/BHC-IT/stronk-types/compare/v5.5.2...v5.5.3) (2023-11-01)
+
+
+### Bug Fixes
+
+* Correctly export for use with CommonJS ([09f3879](https://github.com/BHC-IT/stronk-types/commit/09f3879a0d8f946a50a057d46e9c6056c3bde8c4))
+
 ## [5.5.2](https://github.com/BHC-IT/stronk-types/compare/v5.5.1...v5.5.2) (2023-11-01)
 
 ## [5.5.1](https://github.com/BHC-IT/stronk-types/compare/v5.5.0...v5.5.1) (2023-10-23)
