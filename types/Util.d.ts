@@ -53,16 +53,46 @@ export namespace PickByType {
   }
 }
 
-type CreateArrayWithLength<Length extends number, Accumulator extends never[] = []> = Accumulator['length'] extends Length
-  ? Accumulator
-  : CreateArrayWithLength<Length, [...Accumulator, never]>
+export type Digit = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
-type NumericRangeCreator<StartArray extends never[], End extends number, Accumulator extends number = never> =
-  StartArray['length'] extends End
-  ? Accumulator | End
-  : NumericRangeCreator<[...StartArray, never], End, Accumulator | StartArray['length']>
+type Next = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+type Increment<T extends number> =
+  T extends -1 ? 0 :
+  `${T}` extends `-${infer N extends number}` ? `-${Decrement<N>}` extends
+  `${infer M extends number}` ? M : never :
+  `${T}` extends `${infer F extends number}${Digit}` ?
+  `${T}` extends `${F}${infer D extends Digit}` ?
+  `${D extends 9 ? Increment<F> : F}${Next[D]}` extends
+  `${infer N extends number}` ? N : never : never :
+  T extends 9 ? 10 : Next[T]
+
+type Prev = [9, 0, 1, 2, 3, 4, 5, 6, 7, 8];
+type Decrement<T extends number> =
+  `${T}` extends `-${infer N extends number}` ? `-${Increment<N>}` extends
+  `${infer M extends number}` ? M : never :
+  `${T}` extends `${infer F extends number}${Digit}` ?
+  `${T}` extends `${F}${infer D extends Digit}` ?
+  `${D extends 0 ? Decrement<F> extends 0 ? "" : Decrement<F> : F}${Prev[D]}` extends
+  `${infer N extends number}` ? N : never : never :
+  T extends 0 ? -1 : Prev[T]
+
+type __NumericRange<Start extends number, End extends number, Accumulator extends number = never> =
+  Start extends End ? Accumulator : __NumericRange<Increment<Start>, End, Start | Accumulator>
 
 /**
- * Create a union type of number ranging from {@link Start} to {@link End}
+ * Create a union type of numbers ranging from {@link Start} to {@link End}.
+ *
+ * Can still receive any number. Use {@link NumericRange.Strict} if you want only
+ * literal values between given bounds.
+ *
+ * @see https://stackoverflow.com/a/76692016/10464267
  */
-export type NumericRange<Start extends number, End extends number> = NumericRangeCreator<CreateArrayWithLength<Start>, End>
+export type NumericRange<Start extends number, End extends number> = Opaque<__NumericRange<Start, End>> | number
+export namespace NumericRange {
+  /**
+   * Create a union type of numbers ranging from {@link Start} to {@link End}.
+   *
+   * Can only accept literal values between given bounds.
+   */
+  export type Strict<Start extends number, End extends number> = __NumericRange<Start, End>
+}
