@@ -1,3 +1,10 @@
+## [5.5.4](https://github.com/BHC-IT/stronk-types/compare/v5.5.3...v5.5.4) (2023-11-06)
+
+
+### Bug Fixes
+
+* Type exports now should work for any importing TS module ([b6d8e29](https://github.com/BHC-IT/stronk-types/commit/b6d8e29c3e66e68ab7665494b62ffa3a4af7d6af))
+
 ## [5.5.3](https://github.com/BHC-IT/stronk-types/compare/v5.5.2...v5.5.3) (2023-11-01)
 
 
