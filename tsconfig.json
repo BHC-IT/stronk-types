@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "noErrorTruncation": true,
+  "preserveWatchOutput": true,
+  "include": [
+    "./types/**/*.ts"
+  ],
+  "compilerOptions": {
+    "noEmit": true,
+    "noEmitOnError": true,
+  }
+}
